@@ -14,3 +14,16 @@ end
 describe port(80), :skip do
   it { should_not be_listening }
 end
+
+describe package "python" do
+  it { should be_installed }
+end
+
+describe package "python-pip" do
+  it { should be_installed }
+end
+
+describe pip('requests') do
+  it { should be_installed }
+   its('version') { should eq '2.3.0' }
+end
