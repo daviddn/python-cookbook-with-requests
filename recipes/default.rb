@@ -8,7 +8,10 @@ apt_update 'update_sources' do
   action :update
 end
 
-package 'python'
+package "python" do
+  action :install
+end
+
 package 'python-pip'
 
 execute 'install requests==2.3.0' do
